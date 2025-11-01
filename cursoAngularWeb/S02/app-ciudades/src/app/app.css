@@ -1,0 +1,55 @@
+:root {
+  --primary-brand: #CA5628;
+  --secondary-soft: #FFE8D8;
+  --accent-text: #2B3C3B;
+  --neutral-light: #FFFFFF;
+  --background-base: #FBF6F0;
+  --neutral-medium: #5B6B67;
+}
+
+body {
+  background-color: var(--background-base);
+  font-family: 'Inter', sans-serif;
+  color: var(--accent-text);
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.destination-card {
+  background-color: var(--neutral-light);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  transition: transform 0.2s;
+}
+
+.destination-card:hover {
+  transform: translateY(-5px);
+}
+
+.destination-card .card-content {
+  padding: 20px;
+}
+
+.destination-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  font-size: 1.5em;
+  margin: 0 0 10px 0;
+  color: var(--accent-text);
+}
+
+.destination-card p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  margin: 0;
+  color: var(--neutral-medium);
+}

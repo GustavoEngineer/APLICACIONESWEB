@@ -1,0 +1,36 @@
+.calculator-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Padding between elements */
+  align-items: center;
+  margin-top: 20px;
+}
+
+.calculator-container input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+  text-align: center;
+}
+
+.calculator-container button {
+  padding: 15px 20px; /* Adjust padding for circular shape */
+  border: none;
+  background-color: #007bff;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 50%; /* Make it circular */
+  width: 80px; /* Ensure width and height are equal for a perfect circle */
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.calculator-container button:hover {
+  background-color: #0056b3;
+}

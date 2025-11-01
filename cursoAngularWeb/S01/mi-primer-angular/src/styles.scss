@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --primary-brand: #A7DFC7;
+  --secondary-accent: #FFE9B9;
+  --neutral-dark: #2B3C3B;
+  --neutral-medium: #5B6B67;
+  --background-base: #FFFFFF;
+  --background-canvas: #D8E6E0;
+  --background-header: #A7DFC7;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  background-color: var(--background-canvas);
+  color: var(--neutral-dark);
+  margin: 0;
+  padding: 20px;
+}

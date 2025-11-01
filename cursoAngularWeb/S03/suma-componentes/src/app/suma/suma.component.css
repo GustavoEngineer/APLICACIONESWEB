@@ -1,0 +1,30 @@
+.container {
+  text-align: center;
+  margin-top: 20px;
+  font-family: 'Press Start 2P', cursive, monospace;
+  color: #303030;
+  border: 2px solid #A0A0A0;
+  background-color: #C0C0C0;
+  padding: 10px;
+  box-shadow: 3px 3px 0px #606060;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p {
+  margin: 5px 0;
+}
+
+h3 {
+  margin-top: 10px;
+  border-top: 1px dashed #A0A0A0;
+  padding-top: 10px;
+}
+
+.resultado {
+  color: #AEC6CF;
+  font-size: 1.5em;
+  font-weight: normal;
+  text-shadow: 1px 1px 0px #606060;
+}
