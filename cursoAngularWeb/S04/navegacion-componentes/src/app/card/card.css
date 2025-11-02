@@ -1,0 +1,33 @@
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    padding: 1rem;
+    margin: 1rem 0;
+    background: #fff;
+    max-width: 400px;
+}
+
+.card-header {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 0.5rem;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #2c3e50;
+}
+
+.card-body {
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+.card-footer {
+    border-top: 1px solid #eee;
+    padding-top: 0.3rem;
+    color: #888;
+    font-size: 0.9rem;
+    text-align: right;
+}
