@@ -1,0 +1,25 @@
+<main class="container">
+  <nav class="navigation-menu">
+    <div class="menu-item" [class.selected]="selectedSection === 'directiva'" (click)="showSection('directiva')">
+      <h2>Directiva</h2>
+      <div class="content" *ngIf="selectedSection === 'directiva'">
+        <app-directiva></app-directiva>
+      </div>
+    </div>
+
+    <div class="menu-item" [class.selected]="selectedSection === 'directiva-incorporada'"
+      (click)="showSection('directiva-incorporada')">
+      <h2>Directiva Incorporada</h2>
+      <div class="content" *ngIf="selectedSection === 'directiva-incorporada'">
+        <app-directiva-incorporada></app-directiva-incorporada>
+      </div>
+    </div>
+
+    <div class="menu-item" [class.selected]="selectedSection === 'home'" (click)="showSection('home')">
+      <h2>Home</h2>
+      <div class="content" *ngIf="selectedSection === 'home'">
+        <app-home></app-home>
+      </div>
+    </div>
+  </nav>
+</main>

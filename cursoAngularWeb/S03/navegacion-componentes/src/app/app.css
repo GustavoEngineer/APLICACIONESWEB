@@ -1,0 +1,141 @@
+:host {
+    display: block;
+    min-height: 100vh;
+    background: linear-gradient(to right,
+            #FFA500 35%,
+            #FFFFFF 35%);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.navigation-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 50px 0;
+    min-height: 700px;
+    position: relative;
+    perspective: 1500px;
+}
+
+.menu-item {
+    background-color: #1976d2;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    transform-origin: center center;
+}
+
+.menu-item h2 {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    transition: all 0.5s ease;
+}
+
+.content {
+    background-color: #1976d2;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 80px 20px 20px 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.content>app-directiva,
+.content>app-directiva-incorporada,
+.content>app-home {
+    display: block;
+    width: 100%;
+}
+
+/* Estilo personalizado para la barra de desplazamiento */
+.content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.menu-item[class*="selected"] {
+    width: 1000px;
+    height: 600px;
+    z-index: 10;
+    transform: translateX(0) scale(1);
+    opacity: 1;
+}
+
+.menu-item[class*="selected"] h2 {
+    top: 30px;
+    transform: translateX(-50%);
+}
+
+.menu-item[class*="selected"] .content {
+    opacity: 1;
+}
+
+/* Estilos para los divs no seleccionados cuando hay uno seleccionado */
+.menu-item:not([class*="selected"]) {
+    opacity: 0.7;
+    z-index: 1;
+}
+
+/* Primer div no seleccionado */
+.menu-item:not([class*="selected"]):nth-child(1) {
+    transform: translateX(-150%) scale(0.7);
+}
+
+/* Último div no seleccionado */
+.menu-item:not([class*="selected"]):nth-child(3) {
+    transform: translateX(150%) scale(0.7);
+}
+
+/* Efectos hover para los divs no seleccionados */
+.menu-item:hover:not([class*="selected"]) {
+    opacity: 0.9;
+    transform: translateX(var(--translate-x, 0)) scale(0.85);
+}
+
+/* Estado inicial cuando no hay selección */
+.navigation-menu:not(:has([class*="selected"])) .menu-item {
+    position: relative;
+    transform: none;
+    opacity: 1;
+}
