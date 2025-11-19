@@ -1,0 +1,53 @@
+<div class="container">
+    <h1>CRUD de Personajes de Marvel</h1>
+
+    <!-- Formulario para Crear y Editar -->
+    <div class="form-section">
+        <h2>{{ editingCharacterId !== null ? 'Editar Personaje' : 'Agregar Nuevo Personaje' }}</h2>
+        <form [formGroup]="characterForm" (ngSubmit)="onSubmit()">
+            <input type="text" formControlName="nombre" placeholder="Nombre">
+            <input type="text" formControlName="alias" placeholder="Alias">
+            <input type="text" formControlName="enemigos" placeholder="Enemigos (separados por coma)">
+            <input type="text" formControlName="ciudad_natal" placeholder="Ciudad Natal">
+            <input type="number" formControlName="edad" placeholder="Edad">
+
+            <div class="form-buttons">
+                <button type="submit" [disabled]="characterForm.invalid">
+                    {{ editingCharacterId !== null ? 'Actualizar' : 'Guardar' }}
+                </button>
+                <button type="button" *ngIf="editingCharacterId !== null" (click)="cancelEdit()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Tabla para Visualizar Personajes -->
+    <div class="list-section">
+        <h2>Listado de Personajes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Alias</th>
+                    <th>Ciudad Natal</th>
+                    <th>Edad</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let character of characters">
+                    <td>{{ character.nombre }}</td>
+                    <td>{{ character.alias }}</td>
+                    <td>{{ character.ciudad_natal }}</td>
+                    <td>{{ character.edad }}</td>
+                    <td class="actions">
+                        <button (click)="editCharacter(character)">Editar</button>
+                        <button (click)="deleteCharacter(character.id!)" class="delete">Eliminar</button>
+                    </td>
+                </tr>
+                <tr *ngIf="characters.length === 0">
+                    <td colspan="5">No hay personajes registrados.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
